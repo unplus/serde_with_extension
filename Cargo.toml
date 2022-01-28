@@ -1,0 +1,31 @@
+[package]
+name = "serde_with_extension"
+version = "0.1.0"
+edition = "2021"
+authors = ["Yoshimitsu Kokubo"]
+rust-version = "1.56"
+categories = ["encoding"]
+description = "This crate with extended functionality for serde_with."
+keywords = ["serde", "serde_with", "utilities"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/unplus/serde_with_extension"
+
+include = ["src/**/*", "LICENSE-*", "README.*", "CHANGELOG.md"]
+
+[features]
+default = []
+decimal = ["rust_decimal"]
+
+[dependencies]
+rust_decimal = { version = "1", optional = true, features = ["serde-with-float"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_with = "1.11.0"
+
+[dev-dependencies]
+serde_json = "1.0"
+
+[[test]]
+name = "decimal_from_number"
+path = "tests/decimal_from_number.rs"
+required-features = ["rust_decimal"]
