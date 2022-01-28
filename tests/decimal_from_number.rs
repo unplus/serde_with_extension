@@ -1,6 +1,6 @@
 use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
-use serde_with_extension::serde_with::serde_as;
+use serde_with::serde_as;
 use serde_with_extension::DecimalFromNumber;
 
 #[serde_as]

@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
-use serde_with_extension::{serde_with::serde_as, BoolFromNumber};
+use serde_with::serde_as;
+use serde_with_extension::BoolFromNumber;
 
 #[serde_as]
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
