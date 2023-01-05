@@ -1,9 +1,9 @@
 [package]
 name = "serde_with_extension"
-version = "0.1.0"
+version = "2.0.0"
 edition = "2021"
 authors = ["Yoshimitsu Kokubo"]
-rust-version = "1.56"
+rust-version = "1.66"
 categories = ["encoding"]
 description = "This crate with extended functionality for serde_with."
 keywords = ["serde", "serde_with", "utilities"]
@@ -15,12 +15,13 @@ include = ["src/**/*", "LICENSE-*", "README.*", "CHANGELOG.md"]
 
 [features]
 default = []
+all = ["decimal"]
 decimal = ["rust_decimal"]
 
 [dependencies]
 rust_decimal = { version = "1", optional = true, features = ["serde-with-float"] }
 serde = { version = "1.0", features = ["derive"] }
-serde_with = "1.11.0"
+serde_with = "2.1.0"
 
 [dev-dependencies]
 serde_json = "1.0"
